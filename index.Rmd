@@ -110,8 +110,8 @@ valueBox(
 ```{r}
 #data <- filter(db, beasiswa == "KIP")
 valueBox(
-  value = paste(format(439, big.mark = " "), " (", 
-                round(439/nrow(db)*100, 0), "%)",
+  value = paste(format(0, big.mark = " "), " (", 
+                round(0/nrow(db)*100, 0), "%)",
                 sep = ""),
   caption = "Penerima KIP",
   icon = "fas fa-hand-holding-usd",
@@ -143,7 +143,7 @@ valueBox(
   value = paste(format(belum, big.mark = " "), " (", 
                 round(belum/nrow(db) * 100, 0), "% )",
                 sep = " "),
-  caption = "Tidak Registrasi Berkas",
+  caption = "Belum Registrasi Berkas",
   icon = "fas fa-file-upload",
   color = "brown"
 )
@@ -171,7 +171,7 @@ valueBox(
   value = paste(format(tdk_bayar, big.mark = " "), " (", 
                 round(tdk_bayar/nrow(db) * 100, 0), "% )",
                 sep = " "),
-  caption = "Tidak Registrasi UKT",
+  caption = "Belum Registrasi UKT",
   icon = "fas fa-file-upload",
   color = "brown"
 )
@@ -447,7 +447,7 @@ data <- db %>%
   arrange(-belum)
   
 
-names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNMPTN", "Sudah Registrasi", "Belum Registrasi")
+names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNBP", "Sudah Registrasi", "Belum Registrasi")
 
 DT::datatable(data,
               rownames = F)#,
@@ -468,7 +468,7 @@ data <- db %>%
   arrange(-registrasi)
   
 
-names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNMPTN", "Sudah Registrasi", "Belum Registrasi")
+names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNBP", "Sudah Registrasi", "Belum Registrasi")
 
 DT::datatable(data,
               rownames = F)#,
@@ -511,7 +511,7 @@ data <- db %>%
   arrange(-mhs)
   
 
-names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNMPTN", "Registrasi", "Tidak Registrasi", "Punya NIM")
+names(data) <- c("Nama Sekolah", "Alamat Kota/Kab", "Alamat Provinsi", "Lulus SNBP", "Registrasi", "Tidak Registrasi", "Punya NIM")
 
 DT::datatable(data,
               rownames = F)#,
