@@ -417,7 +417,7 @@ data %>%
 
 ## row
 
-### Berikut adalah daftar nama calon mahasiswa baru Universitas Sultan Ageng Tirtayasa yang melakukan registrasi ulang di admisi.untirta.ac.id. (**gunakan Search untuk pencarian cepat**)
+### Berikut adalah daftar nama calon mahasiswa baru Universitas Sultan Ageng Tirtayasa yang melakukan registrasi ulang di admisi.untirta.ac.id sampai dengan `r format(Sys.time(), "%d %B %Y")` pukul `r format(Sys.time(), "%X")` (**gunakan Search untuk pencarian cepat**)
 
 ```{r}
 # `r format(Sys.time(), "%d %B %Y")` pukul `r format(Sys.time(), "%X")`
