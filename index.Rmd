@@ -553,7 +553,7 @@ DT::datatable(data,
 ```{r}
 data <- db %>%
   group_by(nama_sklh, kota_sklh, provinsi) %>%
-  mutate(registrasi = replace_na(list(registrasi =  "blm")),
+  mutate(registrasi = replace_na(registrasi, "blm"),
          registrasi = ifelse(registrasi == "blm", 0, 1),
          #nim = replace_na(nim, "blm"),
          nim = ifelse(is.na(nim), 0, 1)) %>%
