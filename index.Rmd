@@ -110,8 +110,8 @@ valueBox(
 ```{r}
 #data <- filter(db, beasiswa == "KIP")
 valueBox(
-  value = paste(format(0, big.mark = " "), " (", 
-                round(0/nrow(db)*100, 0), "%)",
+  value = paste(format(210, big.mark = " "), " (", 
+                round(210/nrow(db)*100, 0), "%)",
                 sep = ""),
   caption = "Penerima KIP",
   icon = "fas fa-hand-holding-usd",
