@@ -291,6 +291,46 @@ div(plot_ly(type = "pie", labels = data$akreditasi, values = data$banyak,
         insidetextorientation = "radial"), align = "center")
 ```
 
+## Row
+
+### **Statistik Keketatan Program Studi**
+
+```{r}
+data <- read_excel("311_Statistik_Keketatan_Prodi.xlsx")
+#data <- data[,-2]
+# karena data tidak lengkap maka diterima dan persen diterima dibuang
+
+data <- data[,-c(2,10,11,14,15)]
+
+data$keketatan <- round(data$keketatan, 2)
+#data$pers_diterima_p1 <- round(data$pers_diterima_p1, 2)
+#data$pers_diterima_p2 <- round(data$pers_diterima_p2, 2)
+data$pers_peminat_p1 <- round(data$pers_peminat_p1, 2)
+data$pers_peminat_p2 <- round(data$pers_peminat_p2, 2)
+
+data <- arrange(data, keketatan)
+data$no <- seq(1, nrow(data))
+
+names(data) <- c("No", "Program Studi", "Jenjang", "Peminat", "Diterima", "Keketatan (%)", "Peminat", "% Peminat", "Peminat", "% Peminat")
+kable(data, row.names = F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F,
+                latex_options = "scale_down") %>%
+  add_header_above(c(" " = 6, "Pilihan 1" = 2, "Pilihan 2" = 2))
+
+library(downloadthis)
+
+data %>%
+  download_this(
+    output_name = "keketatan_prodi",
+    output_extension = ".xlsx",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+
 # Progres Registrasi
 
 ## row
