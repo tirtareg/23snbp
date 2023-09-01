@@ -56,7 +56,7 @@ valueBox(
 
 valueBox(
   value = paste(format(nrow(db), big.mark = " "), "", sep = " "),
-  caption = "Lulus SNMPTN",
+  caption = "Lulus SNBP",
   icon = "fas fa-clipboard-check",
   color = "purple"
 )
